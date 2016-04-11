@@ -380,7 +380,7 @@
 				<version>2.1</version>
 				<configuration>
 					<port>8080</port>
-					<path>/pengxinServer</path>
+					<path>/api</path>
 					<uriEncoding>UTF-8</uriEncoding>
 					<finalName>pengxinServer</finalName>
 					<server>tomcat7</server>
@@ -395,7 +395,7 @@
                     <server>tomcat</server>
                     <username>tomcat</username>
                     <password>tomcat</password>
-                    <path>/pengxinServer</path>
+                    <path>/api</path>
                 </configuration>
             </plugin>
 		</plugins>

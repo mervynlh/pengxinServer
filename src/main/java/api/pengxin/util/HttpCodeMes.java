@@ -3,8 +3,8 @@ package api.pengxin.util;
 import java.util.Random;
 
 public class HttpCodeMes {
-	public final static String SUCCESS_CODE = "0";
-	public final static String SUCCESS_MES="成功";
+	public final static String SUCCESS_CODE = "状态码";
+	public final static String SUCCESS_MES="消息";
 	
 	public final static String MISS_PARAMETER = "1";
 	public final static String MISS_PARAMETER_MES = "缺少参数";
