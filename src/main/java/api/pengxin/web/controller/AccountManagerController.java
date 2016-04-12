@@ -92,7 +92,7 @@ public class AccountManagerController {
 		return entity;
 	}
 	/**
-	 * 修改账户密码
+	 * 修改账户权限
 	 * @param account
 	 * @return
 	 */

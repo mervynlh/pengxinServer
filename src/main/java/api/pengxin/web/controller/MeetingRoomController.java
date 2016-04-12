@@ -58,7 +58,7 @@ public class MeetingRoomController {
 	 * @return
 	 */
 	@ApiOperation(value = "删除会议室", httpMethod = "POST", notes = "删除某个会议室")
-	@RequestMapping(value = "/room/del", method = RequestMethod.POST)
+	@RequestMapping(value = "/del", method = RequestMethod.POST)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "成功", response = ResultEntity.class) })
 	@ResponseBody
 	public ResultEntity delMeetingRoom(@RequestParam String token,@RequestParam String roomId){
@@ -78,7 +78,7 @@ public class MeetingRoomController {
 	 * @return
 	 */
 	@ApiOperation(value = "修改会议室", httpMethod = "POST", notes = "修改会议室")
-	@RequestMapping(value = "/room/update", method = RequestMethod.POST)
+	@RequestMapping(value = "/update", method = RequestMethod.POST)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "成功", response = ResultEntity.class) })
 	@ResponseBody
 	public ResultEntity updateMeetingRoom(@RequestParam String token,@ModelAttribute MeetingRoom meetingRoom){
@@ -96,8 +96,8 @@ public class MeetingRoomController {
 	 * @param token
 	 * @return
 	 */
-	@ApiOperation(value = "会议室列表", httpMethod = "POST", notes = "会议室列表")
-	@RequestMapping(value = "/room/list", method = RequestMethod.POST)
+	@ApiOperation(value = "会议室列表", httpMethod = "GET", notes = "会议室列表")
+	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "成功", response = ResultEntity.class) })
 	@ResponseBody
 	public ResultEntity delAccountUser(@RequestParam String token){

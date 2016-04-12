@@ -11,5 +11,6 @@ public class Token {
     private Date createTime;
     private Date expiresTime;//过期时间
     private Long accountId;//服务商id
+    private Long userId;//用户id
 
 }
