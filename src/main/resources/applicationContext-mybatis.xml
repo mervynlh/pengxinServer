@@ -19,14 +19,14 @@
 				<value>classpath:/mybatis/**/*Mapper.xml</value>
 			</list>
 		</property>
-		<property name="typeAliasesPackage" value="api.pengxin.domain" />
+		<property name="typeAliasesPackage" value="com.drpeng.pengxin.api.domain" />
 		
 	</bean>
 
 
 	<!-- 通过扫描指定目录下所有Mapper，所有的Mapper都继承了SqlMapper接口 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="api.pengxin.dao" />
+		<property name="basePackage" value="com.drpeng.pengxin.api.dao" />
 		<property name="sqlSessionFactory" ref="dataSessionFactory" />
 	</bean>
 

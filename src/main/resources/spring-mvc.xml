@@ -10,7 +10,7 @@
 
 	<!--子容器中自动扫描且只扫描@Controller -->
 	<context:component-scan
-		base-package="api.pengxin.web.controller"
+		base-package="com.drpeng.pengxin.api.controller"
 		use-default-filters="false">
 		<context:include-filter type="annotation"
 			expression="org.springframework.stereotype.Controller" />
@@ -62,7 +62,7 @@
 			<mvc:mapping path="/**/*"/>
 			<mvc:exclude-mapping path="/static/**/*"/>
 			<mvc:exclude-mapping path="/kindeditor/**/*"/>
-			<bean class="api.pengxin.common.intercepter.LoggerIntercepter">
+			<bean class="com.drpeng.pengxin.common.intercepter.LoggerIntercepter">
 			</bean>
 		</mvc:interceptor>
 	</mvc:interceptors>

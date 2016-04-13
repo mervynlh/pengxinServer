@@ -25,13 +25,13 @@
 	<!-- 使用annotation 自动注册bean, 并保证@Required、@Autowired的属性被注入 -->
 	<!-- 加入定制化包路径com.uqsoft.tzcq -->
 	<!-- 主容器中排除controller -->
-	<context:component-scan base-package="api.pengxin">
+	<context:component-scan base-package="com.drpeng.pengxin">
 		<context:exclude-filter type="annotation"
 			expression="org.springframework.stereotype.Controller" />
 		<context:exclude-filter type="annotation"
 			expression="org.springframework.web.bind.annotation.ControllerAdvice" />
 	</context:component-scan>
-	<bean class="api.pengxin.common.SwaggerConfig" />
+	<bean class="com.drpeng.pengxin.common.SwaggerConfig" />
 
 	<!-- 文件解析器 -->
 	<bean id="multipartResolver"
