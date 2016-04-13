@@ -1,9 +1,12 @@
 package com.drpeng.pengxin.api.domain;
 
+import java.io.Serializable;
+
 /**
  * Created by huan.liu on 2016/4/11.
  */
-public class Member {
+public class Member implements Serializable {
+        private static final long serialVersionUID = -7594774111856197489L;
         private Long id;
         private Long userId;//用户id
         private Long conferenceId;//会议id

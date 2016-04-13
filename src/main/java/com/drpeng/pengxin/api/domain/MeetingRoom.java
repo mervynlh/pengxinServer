@@ -1,10 +1,13 @@
 package com.drpeng.pengxin.api.domain;
 
+import java.io.Serializable;
+
 /**
  * 会议室
  * Created by huan.liu on 2016/4/11.
  */
-public class MeetingRoom {
+public class MeetingRoom implements Serializable {
+    private static final long serialVersionUID = 3417408341315728059L;
     private Long id;
     private String type;
     private String alias;//别名,可以有多个

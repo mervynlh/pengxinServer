@@ -1,6 +1,9 @@
 package com.drpeng.pengxin.api.domain;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
+	private static final long serialVersionUID = -8623475762493346151L;
 	private Long id;
 	private String username;
 	private String password;

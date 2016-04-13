@@ -1,12 +1,14 @@
 package com.drpeng.pengxin.api.domain;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * 会议实体
  * Created by zhjy on 2016/4/11.
  */
-public class Conference {
+public class Conference implements Serializable {
+    private static final long serialVersionUID = 5017337084249569366L;
     private Long id;
     private Integer status;
     private String hostPassword;//管理员密码

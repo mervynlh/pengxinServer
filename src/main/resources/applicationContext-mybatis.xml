@@ -7,7 +7,7 @@
 	</bean> 
 	
 	<!-- 配置SqlSessionFactoryBean -->
-	<bean id="dataSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<!-- 参数：数据源 -->
 		<property name="dataSource" ref="dataSource" />
 		<!-- 参数：配置实体 -->
@@ -22,12 +22,15 @@
 		<property name="typeAliasesPackage" value="com.drpeng.pengxin.api.domain" />
 		
 	</bean>
+	<bean id="sqlSessionMain" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg index="0" ref="sqlSessionFactory"/>
+	</bean>
 
 
 	<!-- 通过扫描指定目录下所有Mapper，所有的Mapper都继承了SqlMapper接口 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="basePackage" value="com.drpeng.pengxin.api.dao" />
-		<property name="sqlSessionFactory" ref="dataSessionFactory" />
 	</bean>
 
-</beans>  
+
+</beans>

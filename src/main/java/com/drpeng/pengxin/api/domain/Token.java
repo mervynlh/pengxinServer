@@ -1,11 +1,13 @@
 package com.drpeng.pengxin.api.domain;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Created by zhjy on 2016/4/11.
  */
-public class Token {
+public class Token implements Serializable{
+    private static final long serialVersionUID = -5378194859449204414L;
     private Long id;
     private String token;
     private Date createTime;

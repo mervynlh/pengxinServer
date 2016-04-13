@@ -1,9 +1,13 @@
 package com.drpeng.pengxin.api.domain;
 
+import java.io.Serializable;
+
 /**
  * 服务商账号
  */
-public class AccountUser {
+public class AccountUser implements Serializable {
+
+	private static final long serialVersionUID = 8807491206476904381L;
 	private Long id;
 	private String account;
 	private String password;
