@@ -27,6 +27,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class AccountManagerController extends BaseController {
 
+
 	private  String a = "8";
 
 	@Autowired
