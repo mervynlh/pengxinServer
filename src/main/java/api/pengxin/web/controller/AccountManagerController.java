@@ -1,13 +1,19 @@
 package api.pengxin.web.controller;
 
+import api.pengxin.common.BaseController;
 import api.pengxin.domain.AccountUser;
 import api.pengxin.domain.ResultEntity;
 import api.pengxin.domain.ResultMes;
+import api.pengxin.domain.User;
+import api.pengxin.service.UserService;
 import api.pengxin.util.HttpCodeMes;
 import com.wordnik.swagger.annotations.Api;
 import com.wordnik.swagger.annotations.ApiOperation;
 import com.wordnik.swagger.annotations.ApiResponse;
 import com.wordnik.swagger.annotations.ApiResponses;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,9 +27,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 @Api(value = "Account management", description = "Account management相关接口")
 @Controller
-public class AccountManagerController {
-
-
+public class AccountManagerController extends BaseController {
+	private  String a = "";
+	@Autowired
+	private UserService userService;
 	/**
 	 * 创建账号
 	 * @param account
@@ -40,12 +47,16 @@ public class AccountManagerController {
 	public ResultMes addAccountUser(@RequestParam String account,@RequestParam String password){
 		ResultMes<AccountUser> entity = new ResultMes<AccountUser>();
 		try {
+
+			logger.info("aaa");
 			entity.setCode(HttpCodeMes.SUCCESS_CODE);
 			entity.setMsg(HttpCodeMes.SUCCESS_MES);
 			AccountUser accountUser = new AccountUser();
 			accountUser.setPassword(password);
 			accountUser.setAccount(account);
 			entity.setData(accountUser);
+			User user = userService.getUserById(1l);
+			logger.error(user.getUsername());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
