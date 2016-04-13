@@ -28,7 +28,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class AccountManagerController extends BaseController {
 
 	private  String a = "3";
-
 	@Autowired
 	private UserService userService;
 	/**
