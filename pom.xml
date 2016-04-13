@@ -228,7 +228,7 @@
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-core</artifactId>
-			<version>1.1.2</version>
+			<version>1.1.2</version> 
 		</dependency>
 		<!--http -->
 		<!-- GENERAL UTILS begin -->
@@ -241,6 +241,13 @@
 		</dependency>
 
 		<!-- OTHER TOOLS end -->
+      
+       <!-- print complete sql -->
+       <dependency>
+		<groupId>p6spy</groupId>
+		<artifactId>p6spy</artifactId>
+		<version>2.2.0</version>
+	   </dependency>
 
 
 	</dependencies>
