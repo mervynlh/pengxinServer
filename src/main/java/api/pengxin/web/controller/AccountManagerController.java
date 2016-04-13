@@ -48,7 +48,9 @@ public class AccountManagerController extends BaseController {
 		ResultMes<AccountUser> entity = new ResultMes<AccountUser>();
 		try {
 
-			logger.info("aaa");
+			logger.debug("debug");
+			logger.info("info");
+			logger.info("error");
 			entity.setCode(HttpCodeMes.SUCCESS_CODE);
 			entity.setMsg(HttpCodeMes.SUCCESS_MES);
 			AccountUser accountUser = new AccountUser();
