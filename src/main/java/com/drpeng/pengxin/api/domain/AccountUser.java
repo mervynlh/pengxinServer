@@ -12,7 +12,7 @@ public class AccountUser implements Serializable {
 	private String account;
 	private String password;
 	private String ptoken;
-	private Integer status;//状态
+	private Integer status;//状态1
 	public Long getId() {
 		return id;
 	}
