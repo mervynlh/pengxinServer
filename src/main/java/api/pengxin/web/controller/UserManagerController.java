@@ -1,5 +1,6 @@
 package api.pengxin.web.controller;
 
+import api.pengxin.common.BaseController;
 import api.pengxin.domain.AccountUser;
 import api.pengxin.domain.ResultEntity;
 import api.pengxin.domain.ResultMes;
@@ -25,7 +26,7 @@ import java.util.Map;
 @Api(value = "user management", description = "user management相关接口")
 @Controller
 @RequestMapping("/v1/user")
-public class UserManagerController {
+public class UserManagerController extends BaseController {
 
 	@ApiOperation(value = "通过服务商账号密码获取token", httpMethod = "GET", notes = "通过服务商账号密码获取token")
 	@RequestMapping(value = "/token", method = RequestMethod.GET)

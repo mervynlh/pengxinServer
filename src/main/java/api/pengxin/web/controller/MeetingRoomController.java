@@ -1,5 +1,6 @@
 package api.pengxin.web.controller;
 
+import api.pengxin.common.BaseController;
 import api.pengxin.domain.AccountUser;
 import api.pengxin.domain.MeetingRoom;
 import api.pengxin.domain.ResultEntity;
@@ -20,7 +21,7 @@ import org.springframework.web.bind.annotation.*;
 @Api(value = "meeting room ", description = "meeting room相关接口")
 @Controller
 @RequestMapping("/v1/room")
-public class MeetingRoomController {
+public class MeetingRoomController extends BaseController {
 
 
 	/**

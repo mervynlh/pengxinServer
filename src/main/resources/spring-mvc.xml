@@ -55,7 +55,20 @@
         </property>  
 		<property name="order" value="1"></property>
 	</bean>
-	
-	
+	<!-- ②：拦截器的配置 -->
+	<mvc:interceptors>
+		<!-- 访问日志 -->
+		<mvc:interceptor>
+			<mvc:mapping path="/**/*"/>
+			<mvc:exclude-mapping path="/static/**/*"/>
+			<mvc:exclude-mapping path="/kindeditor/**/*"/>
+			<bean class="api.pengxin.common.intercepter.LoggerIntercepter">
+			</bean>
+		</mvc:interceptor>
+	</mvc:interceptors>
+
+
+
+
 
 </beans>

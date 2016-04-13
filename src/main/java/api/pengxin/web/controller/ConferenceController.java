@@ -1,5 +1,6 @@
 package api.pengxin.web.controller;
 
+import api.pengxin.common.BaseController;
 import api.pengxin.domain.Conference;
 import api.pengxin.domain.MeetingRoom;
 import api.pengxin.domain.ResultEntity;
@@ -22,7 +23,7 @@ import java.util.Date;
 @Api(value = "conference", description = "conference相关接口")
 @Controller
 @RequestMapping("/v1/conference")
-public class ConferenceController {
+public class ConferenceController extends BaseController {
 
 
 	/**

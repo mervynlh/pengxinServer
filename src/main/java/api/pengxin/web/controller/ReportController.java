@@ -1,5 +1,6 @@
 package api.pengxin.web.controller;
 
+import api.pengxin.common.BaseController;
 import api.pengxin.domain.ResultEntity;
 import api.pengxin.domain.ResultMes;
 import api.pengxin.util.HttpCodeMes;
@@ -16,7 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Api(value = "report management",description = "会务相关信息接口",basePath = "/v1/report")
 @Controller
 @RequestMapping("/v1/report")
-public class ReportController {
+public class ReportController extends BaseController {
     /**
      * 会议信息接口
      * @param token
