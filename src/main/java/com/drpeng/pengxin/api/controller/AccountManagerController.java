@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Api(value = "Account management", description = "Account management相关接口")
 @Controller
 public class AccountManagerController extends BaseController {
-	private  String a = "1";
+	private  String a = "3";
 	@Autowired
 	private UserService userService;
 	/**
