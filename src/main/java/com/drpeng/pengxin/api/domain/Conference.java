@@ -24,6 +24,8 @@ public class Conference implements Serializable {
     private Date endTime;
     private Long accountId;//服务商id
     private String type;//类型
+    private Integer number;//会议人数
+    private String name;//会议名称
 
     public Long getId() {
         return id;
@@ -135,5 +137,25 @@ public class Conference implements Serializable {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
+    public Integer getNumber() {
+        return number;
+    }
+
+    public void setNumber(Integer number) {
+        this.number = number;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

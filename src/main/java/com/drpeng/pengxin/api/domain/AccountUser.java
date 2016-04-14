@@ -11,8 +11,8 @@ public class AccountUser implements Serializable {
 	private Long id;
 	private String account;
 	private String password;
-	private String ptoken;
-	private Integer status;//状态1
+	private String secret;
+	private Integer status;//状态
 	public Long getId() {
 		return id;
 	}
@@ -34,12 +34,7 @@ public class AccountUser implements Serializable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getPtoken() {
-		return ptoken;
-	}
-	public void setPtoken(String ptoken) {
-		this.ptoken = ptoken;
-	}
+
 
 	public Integer getStatus() {
 		return status;

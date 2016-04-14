@@ -27,26 +27,11 @@ import java.util.Map;
 @RequestMapping("/v1/user")
 public class UserManagerController extends BaseController {
 
-	@ApiOperation(value = "通过服务商账号密码获取token", httpMethod = "GET", notes = "通过服务商账号密码获取token")
-	@RequestMapping(value = "/token", method = RequestMethod.GET)
-	@ResponseBody
-	public Map<String, Object> createAccount(@RequestParam("account") String account,
-											 @RequestParam("password") String password) {
-		HashMap<String, Object> map = new HashMap<String, Object>();
-		try {
-			map.put("code", HttpCodeMes.SUCCESS_CODE);
-			map.put("msg", HttpCodeMes.SUCCESS_MES);
-			map.put("token","dfadadfsdljfasljdasdaskljqweqe21");
-			map.put("expires_in",7200);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return map;
-	}
+
 	/**
 	 * 创建用户
-	 * @param token
 	 * @param username
+	 * @param token
 	 * @return
 	 */
 	@ApiOperation(value = "创建用户", httpMethod = "POST", notes = "服务商创建user")
