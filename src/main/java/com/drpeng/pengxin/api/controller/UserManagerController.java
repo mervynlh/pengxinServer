@@ -31,14 +31,15 @@ public class UserManagerController extends BaseController {
 	/**
 	 * 创建用户
 	 * @param username
-	 * @param token
+	 * @param appId
+	 * @param appSecret
 	 * @return
 	 */
 	@ApiOperation(value = "创建用户", httpMethod = "POST", notes = "服务商创建user")
 	@RequestMapping(value = "/create", method = RequestMethod.POST)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "成功", response = ResultEntity.class) })
 	@ResponseBody
-	public ResultMes addUser(@RequestParam String token,@RequestParam String username){
+	public ResultMes addUser(@RequestParam String appId,@RequestParam String appSecret,@RequestParam String username){
 		ResultMes<User> entity = new ResultMes<User>();
 		try {
 			entity.setCode(HttpCodeMes.SUCCESS_CODE);
@@ -58,7 +59,8 @@ public class UserManagerController extends BaseController {
 
 	/**
 	 * 删除用户
-	 * @param token
+	 * @param appId
+	 * @param appSecret
 	 * @param userId
 	 * @return
 	 */
@@ -66,7 +68,7 @@ public class UserManagerController extends BaseController {
 	@RequestMapping(value = "/del", method = RequestMethod.POST)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "成功", response = ResultEntity.class) })
 	@ResponseBody
-	public ResultEntity delUser(@RequestParam String token,@RequestParam Long userId){
+	public ResultEntity delUser(@RequestParam String appId,@RequestParam String appSecret,@RequestParam Long userId){
 		ResultEntity entity = new ResultEntity();
 		try {
 			entity.setCode(HttpCodeMes.SUCCESS_CODE);
@@ -78,14 +80,15 @@ public class UserManagerController extends BaseController {
 	}
 	/**
 	 * 获取用户列表
-	 * @param token
+	 * @param appId
+	 * @param appSecret
 	 * @return
 	 */
-	@ApiOperation(value = "获取用户列表", httpMethod = "POST", notes = "获取用户列表")
+	@ApiOperation(value = "获取用户列表", httpMethod = "GET", notes = "获取用户列表")
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "成功", response = ResultEntity.class) })
 	@ResponseBody
-	public ResultMes<List<User>> getUserList(@RequestParam String token){
+	public ResultMes<List<User>> getUserList(@RequestParam String appId,@RequestParam String appSecret){
 		ResultMes<List<User>> entity = new ResultMes();
 		List<User> userList = new ArrayList<>();
 		try {
@@ -104,24 +107,26 @@ public class UserManagerController extends BaseController {
 		return entity;
 	}
 	/**
-	 * 获取用户列表
-	 * @param token
+	 * (登录)获取用户token信息 贵则：appId ，appSecret 以及用户名生成
+	 * @param appId
+	 * @param appSecret
+	 * @param username
 	 * @return
 	 */
-	@ApiOperation(value = "获取用户信息", httpMethod = "GET", notes = "获取用户信息")
-	@RequestMapping(value = "/{userId}", method = RequestMethod.GET)
+	@ApiOperation(value = "获取用户token", httpMethod = "GET", notes = "获取用户token信息")
+	@RequestMapping(value = "/token", method = RequestMethod.GET)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "成功", response = ResultEntity.class) })
 	@ResponseBody
-	public ResultMes<User> getUserInfo(@RequestParam String token,@PathVariable Long userId){
-		ResultMes<User> entity = new ResultMes<User>();
+	public ResultMes<Map<String,String>> getUserInfo(@RequestParam String appId,@RequestParam String appSecret,@RequestParam String username){
+		ResultMes<Map<String,String>> entity = new ResultMes<Map<String,String>>();
 		try {
+			List<User> userList = new ArrayList<>();
 			entity.setCode(HttpCodeMes.SUCCESS_CODE);
 			entity.setMsg(HttpCodeMes.SUCCESS_MES);
-			User user =  new User();
-			user.setId(userId);
-			user.setUsername("用户名");
-			user.setPassword("密码");
-			entity.setData(user);
+			Map<String,String> map = new HashMap<>();
+			map.put("token","E3CEB5881A0A1FDAAD01296D7554868D");
+			map.put("expire","7200");
+			entity.setData(map);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

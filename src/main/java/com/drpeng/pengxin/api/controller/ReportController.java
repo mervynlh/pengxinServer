@@ -24,13 +24,14 @@ public class ReportController extends BaseController {
     /**
      * 会议信息接口
      * @param token
+     * @param conferenceId
      * @return
      */
     @RequestMapping(value = "/info",method = RequestMethod.GET)
     @ApiOperation(value = "会议信息接口",httpMethod = "GET",notes = "会议信息，包含统计信息")
     @ApiResponses(value = { @ApiResponse(code = 200, message = "成功", response = ResultEntity.class) })
     @ResponseBody
-    public ResultMes reportInfo(@RequestParam String appId,@RequestParam String appSecret,@RequestParam Long conferenceId){
+    public ResultMes reportInfo(@RequestParam String token,@RequestParam Long conferenceId){
         ResultMes<Conference> entity =new ResultMes<Conference>();
         try {
             entity.setCode(HttpCodeMes.SUCCESS_CODE);

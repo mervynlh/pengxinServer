@@ -1,6 +1,7 @@
 package com.drpeng.pengxin.api.domain;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * 会议室
@@ -10,7 +11,7 @@ public class MeetingRoom implements Serializable {
     private static final long serialVersionUID = 3417408341315728059L;
     private Long id;
     private String type;
-    private String alias;//别名,可以有多个
+    private List<String> alias;//别名,可以有多个
     private String hostPassword;//管理员密码
     private String memberPassword;//成员密码
     private String guestPassword;//客人密码
@@ -36,11 +37,11 @@ public class MeetingRoom implements Serializable {
         this.type = type;
     }
 
-    public String getAlias() {
+    public List<String> getAlias() {
         return alias;
     }
 
-    public void setAlias(String alias) {
+    public void setAlias(List<String> alias) {
         this.alias = alias;
     }
 

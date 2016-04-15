@@ -12,6 +12,7 @@ public class Member implements Serializable {
         private Long conferenceId;//会议id
         private Integer status;//状态
         private String muteStatus;//静音状态
+        private String type;//成员类型，主持人，成员
 
         public Long getId() {
                 return id;
@@ -51,5 +52,13 @@ public class Member implements Serializable {
 
         public void setMuteStatus(String muteStatus) {
                 this.muteStatus = muteStatus;
+        }
+
+        public String getType() {
+                return type;
+        }
+
+        public void setType(String type) {
+                this.type = type;
         }
 }

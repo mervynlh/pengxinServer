@@ -24,7 +24,12 @@ import java.util.Map;
 @Controller
 @RequestMapping("/v1/account")
 public class AccountManagerController extends BaseController {
-
+	/**
+	 * 获取appId appSecret
+	 * @param account
+	 * @param password
+	 * @return
+	 */
 	@ApiOperation(value = "通过服务商账号获取appId，appSecret", httpMethod = "GET", notes = "通过服务商账号密码获取appId，appSecret")
 	@RequestMapping(value = "/token", method = RequestMethod.GET)
 	@ResponseBody
@@ -43,7 +48,7 @@ public class AccountManagerController extends BaseController {
 	}
 	/**
 	 * 修改账户密码
-	 * @param account
+	 * @param
 	 * @param oldPwd
 	 * @param newPwd
 	 * @param confirmPwd
